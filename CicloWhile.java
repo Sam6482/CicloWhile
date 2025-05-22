@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class CicloWhile{
     private static final Scanner teclado = new Scanner(System.in);
@@ -7,8 +8,8 @@ public class CicloWhile{
         int numeroTemporal = 0;
 
         while(numeroTemporal <= 0){
-           System.out.println(mensaje + " :");
-            numeroTemporal = teclado.nextInt();
+           String numero = JOptionPane.showInputDialog(null, mensaje + ":");
+            numeroTemporal = Integer.parseInt(numero);
         }
         return numeroTemporal;
     }
@@ -17,7 +18,8 @@ public class CicloWhile{
         int numero = obtenerNumero("Ingresa un numero");
         int numero2 = obtenerNumero("ingresa un numero");
         int resultado = numero / numero2;
-        System.out.println("El resutado es "+ resultado);
+       
+       JOptionPane.showMessageDialog(null,"El resultado es: " + resultado);
    
     }
 
